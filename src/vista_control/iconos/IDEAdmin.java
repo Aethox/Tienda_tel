@@ -38,6 +38,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         this.PReabastecer.setVisible(false);
         this.HistorialCompras.setVisible(false);
         this.PHistVentas.setVisible(false);
+        this.PInventario.setVisible(false);
         this.conexion = conexion;
     }
 
@@ -124,7 +125,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(172, 191, 164));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Slider.setBackground(new java.awt.Color(48, 29, 18));
+        Slider.setBackground(new java.awt.Color(249, 35, 61));
         Slider.setMaximumSize(new java.awt.Dimension(250, 480));
 
         Slide2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -147,7 +148,7 @@ public class IDEAdmin extends javax.swing.JFrame {
             }
         });
 
-        Shop.setBackground(new java.awt.Color(48, 29, 18));
+        Shop.setBackground(new java.awt.Color(249, 35, 61));
         Shop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BComprar.setBackground(new java.awt.Color(72, 69, 112));
@@ -162,7 +163,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         });
         Shop.add(BComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
 
-        jLabel3.setBackground(new java.awt.Color(48, 29, 18));
+        jLabel3.setBackground(new java.awt.Color(249, 35, 61));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_shopping_bag_black_24dp.png"))); // NOI18N
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel3.setOpaque(true);
@@ -173,7 +174,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         jLabel6.setText("Reabastecer");
         Shop.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 18, 104, -1));
 
-        HistorialV.setBackground(new java.awt.Color(48, 29, 18));
+        HistorialV.setBackground(new java.awt.Color(249, 35, 61));
         HistorialV.setPreferredSize(new java.awt.Dimension(0, 180));
         HistorialV.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -189,7 +190,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         });
         HistorialV.add(BHistorialVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
 
-        jLabel4.setBackground(new java.awt.Color(48, 29, 18));
+        jLabel4.setBackground(new java.awt.Color(249, 35, 61));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_article_black_24dp.png"))); // NOI18N
         jLabel4.setAlignmentX(0.5F);
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -201,7 +202,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         jLabel7.setText("Historial ventas");
         HistorialV.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 15, 109, -1));
 
-        Salir.setBackground(new java.awt.Color(48, 29, 18));
+        Salir.setBackground(new java.awt.Color(249, 35, 61));
         Salir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BSalir.setBackground(new java.awt.Color(133, 14, 74));
@@ -216,7 +217,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         });
         Salir.add(BSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
 
-        jLabel5.setBackground(new java.awt.Color(48, 29, 18));
+        jLabel5.setBackground(new java.awt.Color(249, 35, 61));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_logout_black_24dp.png"))); // NOI18N
         jLabel5.setAlignmentX(0.5F);
         jLabel5.setOpaque(true);
@@ -229,7 +230,7 @@ public class IDEAdmin extends javax.swing.JFrame {
 
         tAg2.setText("2021");
 
-        Inventario.setBackground(new java.awt.Color(48, 29, 18));
+        Inventario.setBackground(new java.awt.Color(249, 35, 61));
         Inventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BInventario.setBackground(new java.awt.Color(72, 69, 112));
@@ -244,7 +245,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         });
         Inventario.add(BInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
 
-        jLabel11.setBackground(new java.awt.Color(48, 29, 18));
+        jLabel11.setBackground(new java.awt.Color(249, 35, 61));
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_store_black_24dp.png"))); // NOI18N
         jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel11.setOpaque(true);
@@ -255,7 +256,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         jLabel12.setText("Inventario");
         Inventario.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 18, 104, -1));
 
-        HistC.setBackground(new java.awt.Color(48, 29, 18));
+        HistC.setBackground(new java.awt.Color(249, 35, 61));
         HistC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BHistorialCompras.setBackground(new java.awt.Color(72, 69, 112));
@@ -270,7 +271,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         });
         HistC.add(BHistorialCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
 
-        jLabel13.setBackground(new java.awt.Color(48, 29, 18));
+        jLabel13.setBackground(new java.awt.Color(249, 35, 61));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_receipt_black_24dp.png"))); // NOI18N
         jLabel13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel13.setOpaque(true);
@@ -328,9 +329,9 @@ public class IDEAdmin extends javax.swing.JFrame {
 
         jPanel2.add(Slider, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 50, 480));
 
-        PReabastecer.setBackground(new java.awt.Color(101, 47, 72));
+        PReabastecer.setBackground(new java.awt.Color(39, 156, 107));
 
-        jPanel3.setBackground(new java.awt.Color(59, 112, 128));
+        jPanel3.setBackground(new java.awt.Color(4, 175, 63));
 
         jLabel10.setBackground(new java.awt.Color(101, 47, 72));
         jLabel10.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
@@ -393,7 +394,7 @@ public class IDEAdmin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel7.setBackground(new java.awt.Color(59, 112, 128));
+        jPanel7.setBackground(new java.awt.Color(4, 175, 63));
 
         jLabel16.setBackground(new java.awt.Color(101, 47, 72));
         jLabel16.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
@@ -426,7 +427,7 @@ public class IDEAdmin extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jPanel8.setBackground(new java.awt.Color(59, 112, 128));
+        jPanel8.setBackground(new java.awt.Color(4, 175, 63));
 
         jLabel18.setBackground(new java.awt.Color(101, 47, 72));
         jLabel18.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
@@ -459,7 +460,7 @@ public class IDEAdmin extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jPanel9.setBackground(new java.awt.Color(59, 112, 128));
+        jPanel9.setBackground(new java.awt.Color(4, 175, 63));
 
         jLabel19.setBackground(new java.awt.Color(101, 47, 72));
         jLabel19.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
@@ -530,7 +531,7 @@ public class IDEAdmin extends javax.swing.JFrame {
 
         jPanel2.add(PReabastecer, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 680, 480));
 
-        jPanel6.setBackground(new java.awt.Color(69, 17, 26));
+        jPanel6.setBackground(new java.awt.Color(4, 175, 63));
 
         jLabel2.setBackground(new java.awt.Color(255, 141, 89));
         jLabel2.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
@@ -618,6 +619,8 @@ public class IDEAdmin extends javax.swing.JFrame {
         jLabel20.setText("Historial de Ventas");
         PHistVentas.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
 
+        jPanel2.add(PHistVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 680, 480));
+
         PInventario.setBackground(new java.awt.Color(25, 29, 32));
         PInventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -644,9 +647,7 @@ public class IDEAdmin extends javax.swing.JFrame {
         jLabel21.setText("Inventario TelStore");
         PInventario.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
 
-        PHistVentas.add(PInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 680, 480));
-
-        jPanel2.add(PHistVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 680, 480));
+        jPanel2.add(PInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 680, 480));
 
         icono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/54TLbcUcnRm3sWQK3HKkuAMedF1JSX7yKgEqYjnyTKPwrcPxaDznYPU1p1QGrNrvQdTdCECy2ByUFBHCZuUkz1ZRK27oJUsu65c1nLv4hqL6r9YTuBWGVUwPJjmHVoJhumNH4SCaA.jpg"))); // NOI18N
@@ -778,9 +779,9 @@ public class IDEAdmin extends javax.swing.JFrame {
                     FK_Registro = Integer.parseInt(RS.getString("D"));
                 }
                 conexion.modificarBD("INSERT INTO tbl_realizar_compra(Codigo_Equipo_Compra,Comprador,Proveedor,fk_NIT) VALUES (" + "'" + FK_Compra + "'" + "," + "'" + Empresa + "'" + "," + "'" + Proveedor + "'" + "," + "'" + 2222 + "'" + ")");
-                conexion.modificarBD("INSERT INTO tbl_registro_compra(Cantidad,Valor_Unit,Valor_Total) VALUES(" + Cantidad + "," + Valor + "," + Cantidad * Valor + "," + ")");
+                conexion.modificarBD("INSERT INTO tbl_registro_compra(Cantidad,Valor_Unit,Valor_Total) VALUES(" + Cantidad + "," + Valor + "," + Cantidad * Valor + ")");
                 conexion.modificarBD("INSERT INTO tbl_consulta_compra(Codigo_Equipo_Compra,Id_Factura_Compra) VALUES("+FK_Compra+","+FK_Registro+")");
-                
+                JOptionPane.showMessageDialog(this, "Tu compra ha sido exitosa", "compra", 1);
             } else {
                 conexion.modificarBD("UPDATE tbl_equipos SET cantidad = " + (Cantidad + RCant) + " WHERE Código_Equipo = " + RArt);
                 conexion.modificarBD("INSERT INTO tbl_compra_equipo(Cantidad,Comprador,Nom_eq,Fecha,Valor_Unit,Valor_Total) VALUES (" + Cantidad + "," + "'" + Empresa + "'" + "," + "'" + NombreArticulo + "'" + "," + "'" + java.time.LocalDate.now() + "'" + "," + Valor + "," + Valor * Cantidad + ")");
@@ -796,6 +797,7 @@ public class IDEAdmin extends javax.swing.JFrame {
                 conexion.modificarBD("INSERT INTO tbl_realizar_compra(Codigo_Equipo_Compra,Comprador,Proveedor,fk_NIT) VALUES (" + "'" + FK_Compra + "'" + "," + "'" + Empresa + "'" + "," + "'" + Proveedor + "'" + "," + "'" + 2222 + "'" + ")");
                 conexion.modificarBD("INSERT INTO tbl_registro_compra(Cantidad,Valor_Unit,Valor_Total) VALUES(" + Cantidad + "," + Valor + "," + Cantidad * Valor + ")");
                 conexion.modificarBD("INSERT INTO tbl_consulta_compra(Codigo_Equipo_Compra,Id_Factura_Compra) VALUES("+FK_Compra+","+FK_Registro+")");
+                JOptionPane.showMessageDialog(this, "Tu compra ha sido exitosa", "compra", 1);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
