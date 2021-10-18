@@ -90,7 +90,7 @@ public class ConexionDB {
        int nroRegistros = 0; 
        try {
             Statement comando = conexion.createStatement();
-            comando.executeUpdate(url);
+            comando.executeUpdate(sql);
         } catch (SQLException ex) {
             Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
@@ -100,6 +100,7 @@ public class ConexionDB {
    public void CerrarConexion(){
         try {
             conexion.close();
+            System.out.println("Conexion cerrada");
         } catch (SQLException ex) {
             Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
         }
