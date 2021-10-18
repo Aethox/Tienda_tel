@@ -8,6 +8,7 @@ package vista_control.iconos;
 import Servicios.ConexionDB;
 import java.awt.Dimension;
 import java.awt.Point;
+import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -17,17 +18,29 @@ import java.util.logging.Logger;
  *
  * @author AMD RYZEN
  */
-public class IDEInicio extends javax.swing.JFrame {
+public class IDECliente1 extends javax.swing.JFrame {
 
     /**
      * Creates new form IDEInicio
      */
-    public IDEInicio() {
+    DefaultTableModel model;
+    ConexionDB conexion = null;
+    public IDECliente1(ConexionDB conexion) {
         initComponents();
         this.Slider.setSize(50, 480);
         this.Iconos.setVisible(false);
-        this.PUsers.setVisible(false);
+        this.PCatalogo.setVisible(false);
         this.PAcerca.setVisible(false);
+        this.conexion =  conexion;
+    }
+    
+    public IDECliente1() {
+        initComponents();
+        this.Slider.setSize(50, 480);
+        this.Iconos.setVisible(false);
+        this.PCatalogo.setVisible(false);
+        this.PAcerca.setVisible(false);
+        this.conexion =  conexion;
     }
 
     /**
@@ -43,27 +56,22 @@ public class IDEInicio extends javax.swing.JFrame {
         Slider = new javax.swing.JPanel();
         Slide2 = new javax.swing.JLabel();
         Slide1 = new javax.swing.JLabel();
-        Acerca = new javax.swing.JPanel();
-        BAcerca = new javax.swing.JButton();
+        Shop = new javax.swing.JPanel();
+        BComprar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        Cliente = new javax.swing.JPanel();
-        BCliente = new javax.swing.JButton();
+        Historial = new javax.swing.JPanel();
+        BHistorial = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        Admin = new javax.swing.JPanel();
-        BAdmin = new javax.swing.JButton();
+        Salir = new javax.swing.JPanel();
+        BSalir = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         tAg2 = new javax.swing.JLabel();
-        PUsers = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        user = new javax.swing.JTextField();
-        psw = new javax.swing.JPasswordField();
-        jPanel1 = new javax.swing.JPanel();
-        BIngresar = new javax.swing.JButton();
-        tituloin = new javax.swing.JLabel();
+        PCatalogo = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TbCatalogo = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Iconos = new javax.swing.JLabel();
@@ -84,7 +92,7 @@ public class IDEInicio extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(172, 191, 164));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Slider.setBackground(new java.awt.Color(11, 32, 53));
+        Slider.setBackground(new java.awt.Color(38, 40, 78));
         Slider.setMaximumSize(new java.awt.Dimension(250, 480));
 
         Slide2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -107,86 +115,85 @@ public class IDEInicio extends javax.swing.JFrame {
             }
         });
 
-        Acerca.setBackground(new java.awt.Color(133, 14, 74));
-        Acerca.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Shop.setBackground(new java.awt.Color(72, 69, 112));
+        Shop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BAcerca.setBackground(new java.awt.Color(133, 14, 74));
-        BAcerca.setBorder(null);
-        BAcerca.setBorderPainted(false);
-        BAcerca.setContentAreaFilled(false);
-        BAcerca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BAcerca.setOpaque(false);
-        BAcerca.addActionListener(new java.awt.event.ActionListener() {
+        BComprar.setBackground(new java.awt.Color(72, 69, 112));
+        BComprar.setBorder(null);
+        BComprar.setBorderPainted(false);
+        BComprar.setContentAreaFilled(false);
+        BComprar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BAcercaActionPerformed(evt);
+                BComprarActionPerformed(evt);
             }
         });
-        Acerca.add(BAcerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+        Shop.add(BComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
 
-        jLabel3.setBackground(new java.awt.Color(133, 14, 74));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_info_white_24dp.png"))); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(72, 69, 112));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_shopping_bag_black_24dp.png"))); // NOI18N
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel3.setOpaque(true);
-        Acerca.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 6, -1, 46));
+        Shop.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 6, -1, 46));
 
         jLabel6.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Acerca de");
-        Acerca.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 18, 104, -1));
+        Shop.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 18, 104, -1));
 
-        Cliente.setBackground(new java.awt.Color(133, 14, 74));
-        Cliente.setPreferredSize(new java.awt.Dimension(0, 180));
-        Cliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Historial.setBackground(new java.awt.Color(72, 69, 112));
+        Historial.setPreferredSize(new java.awt.Dimension(0, 180));
+        Historial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BCliente.setBackground(new java.awt.Color(133, 14, 74));
-        BCliente.setBorder(null);
-        BCliente.setBorderPainted(false);
-        BCliente.setContentAreaFilled(false);
-        BCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BCliente.addActionListener(new java.awt.event.ActionListener() {
+        BHistorial.setBackground(new java.awt.Color(133, 14, 74));
+        BHistorial.setBorder(null);
+        BHistorial.setBorderPainted(false);
+        BHistorial.setContentAreaFilled(false);
+        BHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BClienteActionPerformed(evt);
+                BHistorialActionPerformed(evt);
             }
         });
-        Cliente.add(BCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
+        Historial.add(BHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
 
-        jLabel4.setBackground(new java.awt.Color(133, 14, 74));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_account_circle_white_24dp.png"))); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(72, 69, 112));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_article_black_24dp.png"))); // NOI18N
         jLabel4.setAlignmentX(0.5F);
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel4.setOpaque(true);
-        Cliente.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 0, -1, 51));
+        Historial.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 0, -1, 51));
 
         jLabel7.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cliente");
-        Cliente.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 15, 109, -1));
+        Historial.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 15, 109, -1));
 
-        Admin.setBackground(new java.awt.Color(133, 14, 74));
-        Admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Salir.setBackground(new java.awt.Color(72, 69, 112));
+        Salir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BAdmin.setBackground(new java.awt.Color(133, 14, 74));
-        BAdmin.setBorder(null);
-        BAdmin.setBorderPainted(false);
-        BAdmin.setContentAreaFilled(false);
-        BAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BAdmin.addActionListener(new java.awt.event.ActionListener() {
+        BSalir.setBackground(new java.awt.Color(133, 14, 74));
+        BSalir.setBorder(null);
+        BSalir.setBorderPainted(false);
+        BSalir.setContentAreaFilled(false);
+        BSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BAdminActionPerformed(evt);
+                BSalirActionPerformed(evt);
             }
         });
-        Admin.add(BAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+        Salir.add(BSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
 
-        jLabel5.setBackground(new java.awt.Color(133, 14, 74));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_manage_accounts_white_24dp.png"))); // NOI18N
+        jLabel5.setBackground(new java.awt.Color(72, 69, 112));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/outline_logout_black_24dp.png"))); // NOI18N
         jLabel5.setAlignmentX(0.5F);
         jLabel5.setOpaque(true);
-        Admin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 0, -1, 51));
+        Salir.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 0, -1, 51));
 
         jLabel8.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Administrador");
-        Admin.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 17, 101, -1));
+        Salir.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 17, 101, -1));
 
         tAg2.setText("2021");
 
@@ -194,7 +201,7 @@ public class IDEInicio extends javax.swing.JFrame {
         Slider.setLayout(SliderLayout);
         SliderLayout.setHorizontalGroup(
             SliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Acerca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Shop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(SliderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Slide1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,8 +210,8 @@ public class IDEInicio extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(SliderLayout.createSequentialGroup()
                 .addGroup(SliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Admin, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                    .addComponent(Historial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Salir, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(SliderLayout.createSequentialGroup()
                 .addGap(99, 99, 99)
@@ -219,11 +226,11 @@ public class IDEInicio extends javax.swing.JFrame {
                     .addComponent(Slide1)
                     .addComponent(Slide2))
                 .addGap(31, 31, 31)
-                .addComponent(Acerca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Shop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Historial, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                 .addComponent(tAg2)
                 .addGap(32, 32, 32))
@@ -231,105 +238,41 @@ public class IDEInicio extends javax.swing.JFrame {
 
         jPanel2.add(Slider, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 50, 480));
 
-        PUsers.setBackground(new java.awt.Color(133, 14, 74));
+        PCatalogo.setBackground(new java.awt.Color(101, 47, 72));
 
-        jLabel9.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Usuario:");
-
-        jLabel10.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Contraseña: ");
-
-        user.setBackground(new java.awt.Color(255, 255, 255));
-        user.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        psw.setBackground(new java.awt.Color(255, 255, 255));
-        psw.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        jPanel1.setBackground(new java.awt.Color(11, 32, 53));
-
-        BIngresar.setBackground(new java.awt.Color(11, 32, 53));
-        BIngresar.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
-        BIngresar.setText("Ingresar");
-        BIngresar.setToolTipText("");
-        BIngresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        BIngresar.setBorderPainted(false);
-        BIngresar.setContentAreaFilled(false);
-        BIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BIngresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BIngresarActionPerformed(evt);
+        TbCatalogo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Equipo", "ID"
             }
-        });
+        ));
+        jScrollPane1.setViewportView(TbCatalogo);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PCatalogoLayout = new javax.swing.GroupLayout(PCatalogo);
+        PCatalogo.setLayout(PCatalogoLayout);
+        PCatalogoLayout.setHorizontalGroup(
+            PCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PCatalogoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PCatalogoLayout.setVerticalGroup(
+            PCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PCatalogoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(385, Short.MAX_VALUE))
         );
 
-        tituloin.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
-        tituloin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloin.setText("Bienvenido cliente!");
+        jPanel2.add(PCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 680, 480));
 
-        javax.swing.GroupLayout PUsersLayout = new javax.swing.GroupLayout(PUsers);
-        PUsers.setLayout(PUsersLayout);
-        PUsersLayout.setHorizontalGroup(
-            PUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PUsersLayout.createSequentialGroup()
-                .addGroup(PUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PUsersLayout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addGroup(PUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(PUsersLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(user))
-                            .addGroup(PUsersLayout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(psw, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(PUsersLayout.createSequentialGroup()
-                        .addGap(268, 268, 268)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PUsersLayout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(tituloin, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
-        PUsersLayout.setVerticalGroup(
-            PUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PUsersLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(tituloin, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(PUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(PUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(psw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
-        );
-
-        jPanel2.add(PUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 680, 480));
-
-        jPanel6.setBackground(new java.awt.Color(65, 27, 68));
+        jPanel6.setBackground(new java.awt.Color(101, 47, 72));
 
         jLabel2.setBackground(new java.awt.Color(255, 141, 89));
         jLabel2.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
@@ -413,7 +356,7 @@ public class IDEInicio extends javax.swing.JFrame {
 
         jPanel2.add(PAcerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 680, 480));
 
-        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/495970.jpg"))); // NOI18N
+        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/maxresdefault.jpg"))); // NOI18N
         jPanel2.add(icono, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 540));
 
         tAg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -444,7 +387,7 @@ public class IDEInicio extends javax.swing.JFrame {
            this.Slide1.setLocation(6, 6);
            this.Slide2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista_control/iconos/iconos/sliderin.png")));
            if(Slide2.isVisible()){
-               this.Acerca.setVisible(true);
+               this.Shop.setVisible(true);
            }
 
        }
@@ -455,32 +398,40 @@ public class IDEInicio extends javax.swing.JFrame {
        this.Iconos.setVisible(true);
     }//GEN-LAST:event_Slide2MouseClicked
 
-    private void BAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAcercaActionPerformed
-        this.PUsers.setVisible(false);
-        this.PAcerca.setVisible(true);
-    }//GEN-LAST:event_BAcercaActionPerformed
+    private void BComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BComprarActionPerformed
+        this.PCatalogo.setVisible(true);
+        this.Llenar();
+    }//GEN-LAST:event_BComprarActionPerformed
 
-    private void BClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BClienteActionPerformed
+    private void Llenar(){
+        ResultSet s = null;
+        String[] titulos = {"Equipo","Cantidad disponible"};
+        model = new DefaultTableModel(null,titulos);
+        this.TbCatalogo.setModel(model);
+        s = conexion.consultarBD("SELECT*FROM tbl_equipos");
+        try {
+            while(s.next()){
+                System.out.println(s.getString("Nombre_equipo"));
+                System.out.println(s.getString("cantidad"));
+                Object[] Catalogo = {s.getString("Nombre_equipo"),s.getString("cantidad")};
+                model.addRow(Catalogo);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(IDECliente1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    private void BHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BHistorialActionPerformed
         this.PAcerca.setVisible(false);
-        this.PUsers.setVisible(true);
-        this.tituloin.setText("Bienvenido Cliente");
-    }//GEN-LAST:event_BClienteActionPerformed
+        this.PCatalogo.setVisible(true);
+        
+    }//GEN-LAST:event_BHistorialActionPerformed
 
-    private void BAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAdminActionPerformed
+    private void BSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSalirActionPerformed
         this.PAcerca.setVisible(false);
-        this.PUsers.setVisible(true);
-        this.tituloin.setText("Bienvenido Administrador");
-    }//GEN-LAST:event_BAdminActionPerformed
-
-    private void BIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIngresarActionPerformed
-        String Driver = "com.mysql.cj.jdbc.Driver";
-        String URL_bd = "jdbc:mysql://localhost:3306/tienda_tel";
-        String User = this.user.getText();
-        String psw = this.psw.getText();
-        DB = new ConexionDB(Driver,URL_bd,User,psw);
-        this.setVisible(false);
-        new IDECliente1(DB).setVisible(true);
-    }//GEN-LAST:event_BIngresarActionPerformed
+        this.PCatalogo.setVisible(true);
+    }//GEN-LAST:event_BSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -499,42 +450,43 @@ public class IDEInicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IDEInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IDECliente1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IDEInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IDECliente1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IDEInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IDECliente1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IDEInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IDECliente1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IDEInicio().setVisible(true);
+                new IDECliente1().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Acerca;
-    private javax.swing.JPanel Admin;
-    private javax.swing.JButton BAcerca;
-    private javax.swing.JButton BAdmin;
-    private javax.swing.JButton BCliente;
-    private javax.swing.JButton BIngresar;
-    private javax.swing.JPanel Cliente;
+    private javax.swing.JButton BComprar;
+    private javax.swing.JButton BHistorial;
+    private javax.swing.JButton BSalir;
+    private javax.swing.JPanel Historial;
     private javax.swing.JLabel Iconos;
     private javax.swing.JPanel PAcerca;
-    private javax.swing.JPanel PUsers;
+    private javax.swing.JPanel PCatalogo;
+    private javax.swing.JPanel Salir;
+    private javax.swing.JPanel Shop;
     private javax.swing.JLabel Slide1;
     private javax.swing.JLabel Slide2;
     private javax.swing.JPanel Slider;
+    private javax.swing.JTable TbCatalogo;
     private javax.swing.JLabel icono;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -547,15 +499,11 @@ public class IDEInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPasswordField psw;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel tAg;
     private javax.swing.JLabel tAg2;
-    private javax.swing.JLabel tituloin;
-    private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
-    private ConexionDB DB = null;
+
 }
