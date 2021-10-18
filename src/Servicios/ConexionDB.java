@@ -22,6 +22,7 @@ public class ConexionDB {
     private String user;
     private String psw;
     private Connection conexion = null;
+    private boolean sesion = false;
     public ConexionDB(){
         
     }
@@ -35,11 +36,11 @@ public class ConexionDB {
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Conexion establecida!");
             conexion = DriverManager.getConnection(url,user,psw);
+            this.sesion = true;
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Error!");
         } catch (SQLException ex) {
-            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error");
         }
         
     }
@@ -59,6 +60,11 @@ public class ConexionDB {
     public String getPsw() {
         return psw;
     }
+
+    public boolean isSesion() {
+        return sesion;
+    }
+    
 
     public void setDriver(String driver) {
         this.driver = driver;

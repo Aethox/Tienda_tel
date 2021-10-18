@@ -61,9 +61,11 @@ public class IDEInicio extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         user = new javax.swing.JTextField();
         psw = new javax.swing.JPasswordField();
-        jPanel1 = new javax.swing.JPanel();
-        BIngresar = new javax.swing.JButton();
+        Pbcliente = new javax.swing.JPanel();
+        BinCliente = new javax.swing.JButton();
         tituloin = new javax.swing.JLabel();
+        pinAdmin = new javax.swing.JPanel();
+        BIngresarAdmin = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Iconos = new javax.swing.JLabel();
@@ -115,7 +117,6 @@ public class IDEInicio extends javax.swing.JFrame {
         BAcerca.setBorderPainted(false);
         BAcerca.setContentAreaFilled(false);
         BAcerca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BAcerca.setOpaque(false);
         BAcerca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BAcercaActionPerformed(evt);
@@ -247,42 +248,75 @@ public class IDEInicio extends javax.swing.JFrame {
         psw.setBackground(new java.awt.Color(255, 255, 255));
         psw.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jPanel1.setBackground(new java.awt.Color(11, 32, 53));
+        Pbcliente.setBackground(new java.awt.Color(11, 32, 53));
 
-        BIngresar.setBackground(new java.awt.Color(11, 32, 53));
-        BIngresar.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
-        BIngresar.setText("Ingresar");
-        BIngresar.setToolTipText("");
-        BIngresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        BIngresar.setBorderPainted(false);
-        BIngresar.setContentAreaFilled(false);
-        BIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BIngresar.addActionListener(new java.awt.event.ActionListener() {
+        BinCliente.setBackground(new java.awt.Color(11, 32, 53));
+        BinCliente.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        BinCliente.setText("Ingresar");
+        BinCliente.setToolTipText("");
+        BinCliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        BinCliente.setBorderPainted(false);
+        BinCliente.setContentAreaFilled(false);
+        BinCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BinCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BIngresarActionPerformed(evt);
+                BinClienteActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PbclienteLayout = new javax.swing.GroupLayout(Pbcliente);
+        Pbcliente.setLayout(PbclienteLayout);
+        PbclienteLayout.setHorizontalGroup(
+            PbclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PbclienteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BinCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PbclienteLayout.setVerticalGroup(
+            PbclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PbclienteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BinCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         tituloin.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
         tituloin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloin.setText("Bienvenido cliente!");
+
+        pinAdmin.setBackground(new java.awt.Color(11, 32, 53));
+
+        BIngresarAdmin.setBackground(new java.awt.Color(11, 32, 53));
+        BIngresarAdmin.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        BIngresarAdmin.setText("Ingresar");
+        BIngresarAdmin.setToolTipText("");
+        BIngresarAdmin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        BIngresarAdmin.setBorderPainted(false);
+        BIngresarAdmin.setContentAreaFilled(false);
+        BIngresarAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BIngresarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BIngresarAdminActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pinAdminLayout = new javax.swing.GroupLayout(pinAdmin);
+        pinAdmin.setLayout(pinAdminLayout);
+        pinAdminLayout.setHorizontalGroup(
+            pinAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pinAdminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BIngresarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pinAdminLayout.setVerticalGroup(
+            pinAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pinAdminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BIngresarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout PUsersLayout = new javax.swing.GroupLayout(PUsers);
         PUsers.setLayout(PUsersLayout);
@@ -302,11 +336,13 @@ public class IDEInicio extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(psw, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PUsersLayout.createSequentialGroup()
-                        .addGap(268, 268, 268)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PUsersLayout.createSequentialGroup()
                         .addGap(120, 120, 120)
-                        .addComponent(tituloin, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tituloin, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PUsersLayout.createSequentialGroup()
+                        .addGap(268, 268, 268)
+                        .addGroup(PUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pinAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Pbcliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
         PUsersLayout.setVerticalGroup(
@@ -323,7 +359,9 @@ public class IDEInicio extends javax.swing.JFrame {
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(psw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Pbcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pinAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(140, Short.MAX_VALUE))
         );
 
@@ -462,25 +500,54 @@ public class IDEInicio extends javax.swing.JFrame {
 
     private void BClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BClienteActionPerformed
         this.PAcerca.setVisible(false);
+        this.Pbcliente.setVisible(true);
+        this.BinCliente.setVisible(true);
         this.PUsers.setVisible(true);
+        this.pinAdmin.setVisible(false);
+        this.BIngresarAdmin.setVisible(false);
         this.tituloin.setText("Bienvenido Cliente");
     }//GEN-LAST:event_BClienteActionPerformed
 
     private void BAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAdminActionPerformed
         this.PAcerca.setVisible(false);
+        this.Pbcliente.setVisible(false);
+        this.BinCliente.setVisible(false);
+        this.BIngresarAdmin.setVisible(true);
+        this.pinAdmin.setVisible(true);
         this.PUsers.setVisible(true);
         this.tituloin.setText("Bienvenido Administrador");
     }//GEN-LAST:event_BAdminActionPerformed
 
-    private void BIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIngresarActionPerformed
+    private void BinClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinClienteActionPerformed
         String Driver = "com.mysql.cj.jdbc.Driver";
         String URL_bd = "jdbc:mysql://localhost:3306/tienda_tel";
         String User = this.user.getText();
         String psw = this.psw.getText();
         DB = new ConexionDB(Driver,URL_bd,User,psw);
-        this.setVisible(false);
-        new IDECliente1(DB).setVisible(true);
-    }//GEN-LAST:event_BIngresarActionPerformed
+        if(DB.isSesion()){
+            this.setVisible(false);
+            new IDECliente1(DB).setVisible(true);
+        }else{
+            System.out.println("Error");
+            this.tituloin.setText("Error, verifique datos");
+        }
+        
+    }//GEN-LAST:event_BinClienteActionPerformed
+
+    private void BIngresarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIngresarAdminActionPerformed
+        String Driver = "com.mysql.cj.jdbc.Driver";
+        String URL_bd = "jdbc:mysql://localhost:3306/tienda_tel";
+        String User = this.user.getText();
+        String psw = this.psw.getText();
+        DB = new ConexionDB(Driver,URL_bd,User,psw);
+        if(DB.isSesion()){
+            this.setVisible(false);
+            new IDEAdmin(DB).setVisible(true);
+        }else{
+            System.out.println("Error");
+            this.tituloin.setText("Error, verifique datos");
+        }
+    }//GEN-LAST:event_BIngresarAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -524,11 +591,13 @@ public class IDEInicio extends javax.swing.JFrame {
     private javax.swing.JButton BAcerca;
     private javax.swing.JButton BAdmin;
     private javax.swing.JButton BCliente;
-    private javax.swing.JButton BIngresar;
+    private javax.swing.JButton BIngresarAdmin;
+    private javax.swing.JButton BinCliente;
     private javax.swing.JPanel Cliente;
     private javax.swing.JLabel Iconos;
     private javax.swing.JPanel PAcerca;
     private javax.swing.JPanel PUsers;
+    private javax.swing.JPanel Pbcliente;
     private javax.swing.JLabel Slide1;
     private javax.swing.JLabel Slide2;
     private javax.swing.JPanel Slider;
@@ -548,9 +617,9 @@ public class IDEInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel pinAdmin;
     private javax.swing.JPasswordField psw;
     private javax.swing.JLabel tAg;
     private javax.swing.JLabel tAg2;

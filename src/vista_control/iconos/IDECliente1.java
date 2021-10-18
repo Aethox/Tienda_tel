@@ -627,8 +627,8 @@ public class IDECliente1 extends javax.swing.JFrame {
             cant = cant - Integer.parseInt(this.TCantidad.getText());
             PK = Integer.parseInt(Primary_Key);
             conexion.modificarBD("UPDATE tbl_equipos SET cantidad=" + cant + " WHERE Código_Equipo=" + PK);
-            conexion.modificarBD("INSERT INTO tbl_venta_equipo (cantidad,fecha,nom_eq_ven,id,nom_cliente,valor_ind,total_venta,vendedor,fk_Cod_Inventario)"
-                    + " VALUES" + "(" + quantity + "," + "'" + java.time.LocalDate.now() + "'" + "," + "'" + seleccionar + "'" + "," + Primary_Key + "," + "'" + this.TNombre_Client.getText() + "'" + "," + Precio + "," + quantity * Precio + "," + "'" + "TelStore" + "'" + "," + FK_Inven + ")");
+            conexion.modificarBD("INSERT INTO tbl_venta_equipo (fk_NIT,cantidad,fecha,nom_eq_ven,id,nom_cliente,valor_ind,total_venta,vendedor,fk_Cod_Inventario)"
+                    + " VALUES" + "("+2222+","+ quantity + "," + "'" + java.time.LocalDate.now() + "'" + "," + "'" + seleccionar + "'" + "," + Primary_Key + "," + "'" + this.TNombre_Client.getText() + "'" + "," + Precio + "," + quantity * Precio + "," + "'" + "TelStore" + "'" + "," + FK_Inven + ")");
             conexion.modificarBD("INSERT INTO tbl_almacen_venta(Cantidad,Valor_ind,Total_Venta) VALUES("+quantity+","+Precio+","+quantity*Precio+")");
             JOptionPane.showMessageDialog(this, "Tu compra ha sido exitosa", "compra", 1);
         } catch (SQLException ex) {
